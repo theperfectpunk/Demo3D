@@ -43,8 +43,8 @@ camera.position.z = 5;
 function animate () {
     requestAnimationFrame( animate );
     renderer.render( scene, camera )
-    cube2.rotation.x += 0.01;
-    cube2.rotation.y += 0.01;
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
     hollowCube.rotation.x += 0.01;
     hollowCube.rotation.y += 0.01;
     hollowCube2.rotation.x += 0.01;
@@ -60,37 +60,37 @@ document.addEventListener("mousemove", function(event) {
     yCoord = event.clientY-window.innerHeight/2;
     renderer.render( scene, camera )
     if(xCoord>0) {
-        cube.rotation.y +=0.1;
-        // cube2.rotation.y +=0.1;
-        // hollowCube.rotation.y +=0.1;
-        cube.position.x = -xCoord/250;
-        // cube2.position.x = xCoord/250+1.25;
-        // hollowCube.position.x = -xCoord/250
+        // cube.rotation.y +=0.1;
+        cube2.rotation.y +=0.1;
+        hollowCube.rotation.y +=0.1;
+        // cube.position.x = -xCoord/250;
+        cube2.position.x = xCoord/250+1.25;
+        hollowCube.position.x = -xCoord/250
     }
     if(xCoord<0) {
-        cube.rotation.y -=0.1;
-        // cube2.rotation.y -=0.1;
-        // hollowCube.rotation.y -=0.1
-        cube.position.x = Math.abs(xCoord)/250;
-        // cube2.position.x = -Math.abs(xCoord)/250+1.25;
-        // hollowCube.position.x = Math.abs(xCoord)/250
+        // cube.rotation.y -=0.1;
+        cube2.rotation.y -=0.1;
+        hollowCube.rotation.y -=0.1
+        // cube.position.x = Math.abs(xCoord)/250;
+        cube2.position.x = -Math.abs(xCoord)/250+1.25;
+        hollowCube.position.x = Math.abs(xCoord)/250
     }
 
     if(yCoord>0) {
-        cube.rotation.x +=0.1;
-        // cube2.rotation.x +=0.1;
-        // hollowCube.rotation.x +=0.1
-        cube.position.y = -yCoord/250;
-        // cube2.position.y = yCoord/250+1.25;
-        // hollowCube.position.y = -yCoord/250
+        // cube.rotation.x +=0.1;
+        cube2.rotation.x +=0.1;
+        hollowCube.rotation.x +=0.1
+        // cube.position.y = -yCoord/250;
+        cube2.position.y = yCoord/250+1.25;
+        hollowCube.position.y = -yCoord/250
     }
     if(yCoord<0) {
-        cube.rotation.x -=0.1;
-        // cube2.rotation.x -=0.1;
-        // hollowCube.rotation.x -=0.1
-        cube.position.y = Math.abs(yCoord)/250;
-        // cube2.position.y = Math.abs(yCoord)/250+1.25;
-        // hollowCube.position.y = -Math.abs(yCoord)/250
+        // cube.rotation.x -=0.1;
+        cube2.rotation.x -=0.1;
+        hollowCube.rotation.x -=0.1
+        // cube.position.y = Math.abs(yCoord)/250;
+        cube2.position.y = Math.abs(yCoord)/250+1.25;
+        hollowCube.position.y = -Math.abs(yCoord)/250
     }
 
     console.log(event.clientY-window.innerHeight/2)
